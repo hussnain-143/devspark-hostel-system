@@ -1,0 +1,250 @@
+:root {
+  --primary-bg: #f4f7fa;
+  --header-bg: #2c5282;
+  --sidebar-bg: #f6ad55;
+  --content-bg: #bee3f8;
+  --card-1-bg: #5a67d8;
+  --card-2-bg: #ed8936;
+  --card-3-bg: #38b2ac;
+  --card-4-bg: #ed64a6;
+  --graph-title-bg: #feb2b2;
+  --graph-bg: #68d391;
+  --detail-1-bg: #ed64a6;
+  --detail-2-bg: #81e6d9;
+  --detail-1-card-1-bg: #63b3ed;
+  --detail-1-card-2-bg: #f6ad55;
+  --detail-1-card-3-bg: #b794f4;
+  --footer-bg: #3182ce;
+  --text-color: #1a202c;
+  --text-light: #ffffff;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.body-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: min(2vw, 15px);
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+}
+
+.header-wrapper {
+  grid-area: header;
+  background: var(--header-bg);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: min(3vw, 20px);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow);
+  height: clamp(60px, 10vh, 80px);
+}
+
+.content-wrapper {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: min(2vw, 15px);
+  grid-template-areas:
+    "sidebar content";
+  padding: min(2vw, 20px);
+}
+
+.sidebar-wrapper {
+  grid-area: sidebar;
+  background: var(--sidebar-bg);
+  box-shadow: var(--shadow);
+  padding: min(3vw, 20px);
+  border-radius: 8px;
+}
+
+.main-content-wrapper {
+  grid-area: content;
+  background: var(--content-bg);
+  box-shadow: var(--shadow);
+  padding: min(3vw, 20px);
+  border-radius: 8px;
+  color: var(--text-light);
+}
+
+.detail-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: min(2vw, 10px);
+  grid-template-areas:
+    "card1 card2 card3 card4";
+}
+
+.detail-card-1 { grid-area: card1; background: var(--card-1-bg); }
+.detail-card-2 { grid-area: card2; background: var(--card-2-bg); }
+.detail-card-3 { grid-area: card3; background: var(--card-3-bg); }
+.detail-card-4 { grid-area: card4; background: var(--card-4-bg); }
+
+.detail-card-1, .detail-card-2, .detail-card-3, .detail-card-4 {
+  padding: min(2vw, 15px);
+  border-radius: 8px;
+  height: clamp(80px, 15vh, 100px);
+  color: var(--text-light);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.detail-card-1:hover, .detail-card-2:hover, .detail-card-3:hover, .detail-card-4:hover {
+  transform: translateY(-2px);
+}
+
+.graph-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: min(2vw, 10px);
+  grid-template-areas:
+    "graph-title graph";
+  margin-top: min(3vw, 20px);
+}
+
+.graph-title { grid-area: graph-title; background: var(--graph-title-bg); }
+.graph-area { grid-area: graph; background: var(--graph-bg); }
+
+.graph-title, .graph-area {
+  padding: min(2vw, 15px);
+  border-radius: 8px;
+  height: clamp(300px, 50vh, 400px);
+  color: var(--text-light);
+  box-shadow: var(--shadow);
+}
+
+.detail-area-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: min(2vw, 10px);
+  margin-top: min(3vw, 20px);
+  grid-template-areas:
+    "detail-area-card-1 detail-area-card-2";
+}
+
+.detail-area-card-1 { grid-area: detail-area-card-1; background: var(--detail-1-bg); }
+.detail-area-card-2 { grid-area: detail-area-card-2; background: var(--detail-2-bg); }
+
+.detail-area-card-1, .detail-area-card-2 {
+  padding: min(2vw, 15px);
+  border-radius: 8px;
+  height: clamp(250px, 40vh, 300px);
+  color: var(--text-light);
+  box-shadow: var(--shadow);
+}
+
+.detail-1-area-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: min(2vw, 10px);
+  margin-top: min(3vw, 20px);
+  grid-template-areas:
+    "detail-1-area-card-1 detail-1-area-card-2 detail-1-area-card-3";
+}
+
+.detail-1-area-card-1 { grid-area: detail-1-area-card-1; background: var(--detail-1-card-1-bg); }
+.detail-1-area-card-2 { grid-area: detail-1-area-card-2; background: var(--detail-1-card-2-bg); }
+.detail-1-area-card-3 { grid-area: detail-1-area-card-3; background: var(--detail-1-card-3-bg); }
+
+.detail-1-area-card-1, .detail-1-area-card-2, .detail-1-area-card-3 {
+  padding: min(2vw, 15px);
+  border-radius: 8px;
+  height: clamp(400px, 60vh, 500px);
+  color: var(--text-light);
+  box-shadow: var(--shadow);
+}
+
+.footer-wrapper {
+  grid-area: footer;
+  background: var(--footer-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: min(2vw, 15px);
+  font-weight: 500;
+  box-shadow: var(--shadow);
+  height: clamp(60px, 10vh, 80px);
+}
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "content";
+  }
+  .detail-card-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4";
+  }
+  .graph-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "graph-title"
+      "graph";
+  }
+  .detail-area-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "detail-area-card-1"
+      "detail-area-card-2";
+  }
+  .detail-1-area-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "detail-1-area-card-1"
+      "detail-1-area-card-2"
+      "detail-1-area-card-3";
+  }
+}
+
+@media (max-width: 768px) {
+  .header-wrapper, .footer-wrapper {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    padding: min(2vw, 12px);
+    height: auto;
+  }
+  .detail-card-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4";
+  }
+  .detail-card-1, .detail-card-2, .detail-card-3, .detail-card-4 {
+    height: clamp(70px, 12vh, 90px);
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  }
+  .graph-title, .graph-area {
+    height: clamp(250px, 40vh, 350px);
+  }
+  .detail-area-card-1, .detail-area-card-2 {
+    height: clamp(200px, 35vh, 250px);
+  }
+  .detail-1-area-card-1, .detail-1-area-card-2, .detail-1-area-card-3 {
+    height: clamp(350px, 50vh, 450px);
+  }
+}
