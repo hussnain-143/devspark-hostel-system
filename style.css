@@ -59,6 +59,9 @@ body {
   letter-spacing: 0.5px;
   box-shadow: var(--shadow);
   height: clamp(60px, 10vh, 80px);
+  position: sticky; /* Add this */
+  top: 0; /* Stick to the top of the viewport or parent */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .content-wrapper {
